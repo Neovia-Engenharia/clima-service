@@ -7,6 +7,7 @@ import br.com.neoviaengenharia.clima.domain.observado.Estacao;
 import br.com.neoviaengenharia.clima.domain.observado.HoraNimbus;
 import br.com.neoviaengenharia.clima.domain.observado.LeituraHora;
 import br.com.neoviaengenharia.clima.infra.nimbus.NimbusIndisponivelException.Motivo;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.Duration;
@@ -52,7 +53,7 @@ class NimbusObservadoClientTest {
     private NimbusClient cliente(Duration readTimeout) {
         NimbusProperties props = new NimbusProperties(server.url("/").uri(), PUBLICA, PRIVADA,
                 Duration.ofSeconds(2), readTimeout);
-        return new NimbusClient(NimbusConfig.criarRestClient(props));
+        return new NimbusClient(NimbusConfig.criarRestClient(props), new ObjectMapper());
     }
 
     private List<HoraNimbus> buscar() {

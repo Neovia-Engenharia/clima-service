@@ -161,8 +161,23 @@
 						</exclude>
 					</excludes>
 				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+</plugin>
+		<plugin>
+			<groupId>com.google.cloud.tools</groupId>
+			<artifactId>jib-maven-plugin</artifactId>
+			<version>3.4.4</version>
+			<configuration>
+				<base>
+					<image>eclipse-temurin:17-jre</image>
+				</base>
+				<container>
+					<environment>
+						<TZ>America/Sao_Paulo</TZ>
+					</environment>
+				</container>
+			</configuration>
+		</plugin>
+	</plugins>
+</build>
 
 </project>
