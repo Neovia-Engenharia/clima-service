@@ -90,7 +90,7 @@ class HealthComRedisForaIT extends IntegracaoBase {
   - `application-test.properties`: H2 `jdbc:h2:mem:clima;MODE=MSSQLServer;DATABASE_TO_UPPER=FALSE;DB_CLOSE_DELAY=-1` e `nimbus.api-key=chave-publica-teste`, `nimbus.authorization=chave-privada-teste`.
   - `RelogioConfig` expõe `Clock.systemUTC()`.
 - [ ] **Step 5:** rodar `./mvnw -q test`. Esperado: PASS (2 testes, e nenhum teste antigo de ToDo).
-- [ ] **Step 6:** `git rm -r` do pacote `foundation` (main e test) já feito no Step 4; conferir `git grep -n "123@Neovia\|sqladmin"`, que deve vir vazio.
+- [ ] **Step 6:** `git rm -r` do pacote `foundation` (main e test) já feito no Step 4; conferir `git grep -n "<senha do sqladmin>\|sqladmin"`, que deve vir vazio.
 - [ ] **Step 7:** commit `chore: transforma o template no esqueleto do clima-service`.
 
 ### Task 2: Domínio e persistência do catálogo
